@@ -16,9 +16,7 @@ const menuItem = ({title , imageUrl, size, linkUrl, history, match}) => {
         <div  className = {divclasses.join(' ')} >
 
             <div className ={classes.BackgroundImage} style = {{backgroundImage:  `url(${imageUrl})`}}  onClick = {() => history.push(`${match.url}${linkUrl}`)}>
-
-                
-
+  
             </div>
 
             <div className = {classes.Content}>
