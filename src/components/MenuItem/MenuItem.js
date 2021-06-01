@@ -1,8 +1,8 @@
 import React from 'react'
 import classes from './MenuItem.module.scss'
-
-const menuItem = ({title , imageUrl, size}) => {
-
+import {withRouter} from 'react-router-dom'
+const menuItem = ({title , imageUrl, size, linkUrl, history, match}) => {
+    
     let divclasses = [classes.MenuItem]
 
     if (size){
@@ -15,7 +15,7 @@ const menuItem = ({title , imageUrl, size}) => {
 
         <div  className = {divclasses.join(' ')} >
 
-            <div className ={classes.BackgroundImage} style = {{backgroundImage:  `url(${imageUrl})`}} >
+            <div className ={classes.BackgroundImage} style = {{backgroundImage:  `url(${imageUrl})`}}  onClick = {() => history.push(`${match.url}${linkUrl}`)}>
 
                 
 
@@ -41,4 +41,4 @@ const menuItem = ({title , imageUrl, size}) => {
    
 
 
-export default menuItem 
+export default withRouter(menuItem)
