@@ -3,15 +3,27 @@
 
 
 
- const customButton  = (props) => (
+ const customButton  = ({isGoogleSignIn, children, click,  type, ...otherProps}) => {
 
-    <button className = {classes.CustomButton} type = {props.buttonType} >
+    let buttonClass = [classes.CustomButton]
 
-        {props.children}
+    if(isGoogleSignIn){
 
-    </button>
+        buttonClass = [classes.CustomButton , classes.GoogleSignin]
 
- )
+    }
+
+    return(
+        
+        <button className = {buttonClass.join(' ')} onClick ={click} >
+
+            {children}
+
+        </button>
+
+    )
+
+}
 
 
 export default customButton

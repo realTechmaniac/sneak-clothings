@@ -1,11 +1,17 @@
 .Signin{
 
-    width: 30vw;
+    width: 380px;
     display: flex;
     flex-direction: column;
 
     .Title{
 
         margin:  10px 0;
+    }
+
+    .Buttons{
+
+        display: flex;
+        justify-content: space-around;
     }
 }
